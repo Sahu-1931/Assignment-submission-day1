@@ -1,23 +1,33 @@
-# Assignment-submission-day2
+# Assignment-submission-day3
 
-Write a program in C++ that takes an input number from the user and determines whether it is even or odd. If the number is even, the program should display the message "Number is even." If the number is odd, the program should display the message "Number is odd."
+Write a C++ program that contains a function called reverseString which takes a string as input and reverses it. The program should also include a main function that prompts the user to enter a string, calls the reverseString function to reverse the string, and then displays the reversed string.
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-int main() {
-  // Get the number from the user
-  int number;
-  cout << "Enter a number: ";
-  cin >> number;
-
-  // Check if the number is even
-  if (number % 2 == 0) {
-    cout << "Number is even." << endl;
-  } else {
-    cout << "Number is odd." << endl;
+// Function to reverse a string
+string reverseString(string str) {
+  int n = str.length();
+  for (int i = 0; i < n / 2; i++) {
+    char temp = str[i];
+    str[i] = str[n - 1 - i];
+    str[n - 1 - i] = temp;
   }
+  return str;
+}
+
+int main() {
+  string str;
+  cout << "Enter a string: ";
+  getline(cin, str);
+
+  // Reverse the string
+  str = reverseString(str);
+
+  // Print the reversed string
+  cout << "The reversed string is: " << str << endl;
 
   return 0;
 }
