@@ -10,7 +10,7 @@ using namespace std;
 // Function to reverse a string
 string reverseString(string str) {
   int n = str.length();
-  for (int i = 0; i < n / 2; i++) {
+  for (int i = 0; i < n / 2; i++) {	
     char temp = str[i];
     str[i] = str[n - 1 - i];
     str[n - 1 - i] = temp;
